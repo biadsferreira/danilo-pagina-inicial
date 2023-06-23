@@ -1,0 +1,720 @@
+/* Configuração para a rolagem suave do botão "voltar ao topo" do layout mobile */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Personalização da scrollbar desktop / tablet */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border: 1px solid #646464;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff9f32;
+    border-radius: 20px;
+}
+
+/* Declaração das fontes */
+@font-face {
+    font-family: dosis-book;
+    src: url('fonts/dosis-book.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: dosis-bold;
+    src: url('fonts/dosis-bold.ttf') format("truetype");
+}
+
+/* Zeramento de margem, padding e configuração base do texto */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: dosis-book;
+    color: #646464;
+}
+
+/* Divisão principal do Grid Desktop / Tablet */
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-rows: 20% 1fr;
+    grid-template-areas: "aside header"
+        "aside main";
+}
+
+/* Aqui começa a configuração do header desktop/tablet */
+
+/* Área geral no grid do header desktop/tablet */
+.header {
+    /* border: solid red; */
+    padding: 20px;
+    height: 100%;
+    grid-area: header;
+}
+
+/* Caixa branca com sombra e borda arredondada com cabeçalho geral: H1, busca e menu de navegação Desktop */
+.menu-desktop {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px
+}
+
+/* Título principal */
+h1 {
+    width: 100%;
+    font-family: dosis-bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Cor laranja do título "doar e adotar" */
+h1>b {
+    font-family: dosis-bold;
+    color: #ff9f32;
+}
+
+/* Div contendo imagem da lupa + input de busca */
+.caixa-busca {
+    height: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+/* Configuração do tamanho da imagem da lupa */
+.caixa-busca>img {
+    height: 40px;
+}
+
+/* Estilização da caixa de busca */
+#busca {
+    border: 0 none;
+    padding-left: 15px;
+    border-radius: 20px;
+    width: 230px;
+    font-size: 16px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilização da caixa de busca quando em foco */
+input:focus {
+    border: 0 none;
+    outline: 0;
+}
+
+/* Div contendo os 4 links de navegação */
+.menu-superior {
+    height: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+}
+
+/* Configuração da altura dos ícones no menu desktop */
+.menu-superior>a>img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Estilização dos links de navegação */
+.menu-superior>a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Adição de um espaço do texto do link para o próximo ícone de navegação */
+.menu-superior>a>p {
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+/* Estilização quando o mouse passa em cima dos links de navegação */
+.menu-superior>a:hover {
+    text-decoration: underline;
+}
+
+/* Tirar o espaço de margem do último link do menu através de ID único */
+#chat-desktop {
+    margin: 0;
+}
+
+/* Configuração do menu de navegação quando a tela for igual ou menor que 1200px */
+@media (max-width: 1200px) {
+
+    /* Regra para ocultar o menu desktop */
+    .menu-superior {
+        display: none;
+    }
+
+    /* Botão hamburger */
+    .btn-tablet {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #646464;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Div contendo os links de navegação mobile após clicar no hamburguer */
+    .menu-tablet-interno {
+        /* Position relative para a div Main não cobrir o menu */
+        position: relative;
+        z-index: 999;
+        margin-top: 10px;
+        float: right;
+        width: 340px;
+        height: auto;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-flow: row wrap;
+        justify-content: center;
+        row-gap: 30px;
+    }
+
+    /* Configuração dos links do menu */
+    .menu-tablet-interno>a {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    /* Configuração dos links quando o mouse passa em cima */
+    .menu-tablet-interno>a:hover {
+        text-decoration: underline;
+    }
+
+    /* Configuração dos ícones do menu */
+    .menu-tablet-interno>a>img {
+        margin-right: 85px;
+        height: 35px;
+    }
+}
+
+/* Regra para ocultar o botão hamburguer quando a tela for maior que 1200px */
+@media (min-width: 1201px) {
+    .btn-tablet {
+        display: none;
+    }
+}
+
+
+/* Aqui são as configurações do aside desktop e tablet */
+/* Não tem aside no mobile, os filtros ficam dentro do menu mobile */
+
+/* Configuração geral da área aside */
+.aside-desktop-tablet {
+    height: 100%;
+    padding: 0px 15px 15px 15px;
+    grid-area: aside;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+/* Caixa superior que comporta o logo em 20% da altura da tela */
+.caixa-logo {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Configuração do tamanho do logo em relação a caixa que o comporta */
+.caixa-logo>img {
+    width: 100%;
+    max-width: 200px;
+    min-width: 100px;
+}
+
+/* Caixa branca com bordas arredondas e a sombra que comporta todo o conteúdo do aside */
+.filtros-busca {
+    overflow: auto;
+    padding: 10px;
+    width: 100%;
+    height: 80%;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-between;
+    row-gap: 20px;
+}
+
+/* Configuração da caixa que comporta a imagem da lupa e o texto "filtre sua busca" */
+.tipo-filtro-lupa {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Configurações específicas do ícone da lupa no aside */
+.tipo-filtro-lupa>img {
+    margin-right: 10px;
+    height: 40px;
+}
+
+/* Configuração do texto "filtre sua busca" */
+.tipo-filtro-lupa>h2 {
+    font-family: dosis-bold;
+    font-size: 18px;
+}
+
+/* Configuração para jogar o texto "filtre sua busca" para baixo quando a tela for menor que 875px */
+@media (max-width: 875px) {
+    .tipo-filtro-lupa {
+        flex-direction: column;
+    }
+}
+
+/* Configuração geral de todos os filtros de busca */
+.tipo-filtro {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    row-gap: 15px;
+}
+
+/* Configuração dos textos dos filtros de busca */
+.h2-filtros {
+    font-family: dosis-bold;
+    font-size: 18px;
+    width: 100%;
+}
+
+/* Configuração dos ícones dos filtros de busca */
+.tipo-filtro>img {
+    margin-right: 10px;
+    height: 50px;
+}
+
+
+/* Aqui começa a configuração do conteúdo principal (main) do layout desktop/tablet */
+.main-desktop-tablet {
+    overflow: auto;
+    margin: 0px 20px 0px 20px;
+    height: 100%;
+    grid-area: main;
+}
+
+/* Faixa branca onde fica a seleção do estado */
+.selecao-estado-desktop {
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    column-gap: 20px;
+}
+
+/* Estilização dos links que ficam sobre a faixa branca */
+.selecao-estado-desktop>a {
+    font-family: dosis-bold;
+    color: #ff9f32;
+}
+
+/* Faixa laranja com o texto "conheça seu mais novo amigo" */
+.texto-conheca-seu-mais-novo-amigo {
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    height: 55px;
+    background-color: #ff9f32;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* Configuração do texto da faixa laranja */
+.texto-conheca-seu-mais-novo-amigo>h2 {
+    position: relative;
+    bottom: 7px;
+    font-size: 22px;
+    color: white;
+    letter-spacing: 3px;
+    font-family: dosis-bold;
+    text-align: center;
+}
+
+/* Caixa externa que comporta todos as caixas dos animais */
+.caixa-animais-externa {
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 40px;
+    column-gap: 80px;
+}
+
+/* Caixa de cada animal contendo a imagem e os textos de cada um */
+.caixa-animal {
+    width: 200px;
+    height: 460px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+/* Configuração isolada da imagem do animal */
+#imagem-animal {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Configuração da bolinha com a sigla do estado */
+#icone-estado {
+    position: relative;
+    left: 75%;
+    bottom: 52px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* Configuração do texto com a cidade / estado que vem logo abaixo da imagem */
+.caixa-animal>h3 {
+    position: relative;
+    bottom: 25px;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Configuração do nome do animal */
+.caixa-animal>h2 {
+    position: relative;
+    bottom: 25px;
+    font-size: 25px;
+    color: #ff9f32;
+    font-family: dosis-bold;
+    margin-bottom: 10px;
+}
+
+/* Lista de características do animal */
+.caixa-animal>ul {
+    position: relative;
+    bottom: 25px;
+    margin-left: 10%;
+    width: 90%;
+}
+
+/* Estilização da descrição do animal */
+.caixa-animal>p {
+    position: relative;
+    bottom: 25px;
+    margin-top: 15px;
+    text-align: justify;
+    font-size: 16px;
+}
+
+/* RESPONSIVIDADE MOBILE */
+/* Layout mobile - Telas < 600px */
+
+@media (max-width: 600px) {
+
+    /* Configuração da scroll bar mobile */
+    ::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    /* Mudança do tamanho padrão das fontes, deixa de ser 16px e passa a ser 13px */
+    * {
+        font-size: 13px;
+    }
+
+    /* Configuração do botão "voltar ao topo" */
+    #btn-topo {
+        height: 35px;
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    /* Mudança do Grid principal para apenas 1 coluna. O header fica com 210 de autura e o restante acompanha o tamanho do conteúdo */
+    .container {
+        /* border: solid blue; */
+        height: auto;
+        grid-template-rows: 210px auto;
+        grid-template-columns: 100vw;
+        grid-template-areas: "header"
+            "main";
+    }
+
+    /* Regra para ocultar o menu desktop no layout mobile */
+    .menu-desktop {
+        display: none;
+    }
+
+    /* Configuração do header versão mobile */
+    .header-mobile {
+        padding: 0;
+        grid-area: header;
+        /* border: solid red; */
+        height: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        row-gap: 10px;
+    }
+
+    /* Configuração do tamanho do logo */
+    .header-mobile>img {
+        width: 140px;
+    }
+
+    /* Configuração do texto "Um novo conceito para doar e adotar cães e gatos" */
+    h1,
+    h1>b {
+        font-size: 16px;
+    }
+
+    /* Configuração da caixa que comporta o ícone da lupa e + o input de texto */
+    .caixa-busca {
+        height: auto;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Configuração isolada do input de pesquisa */
+    #busca {
+        font-size: 13px;
+        text-align: left;
+        width: 190px;
+    }
+
+    /* Tamanho do ícone da lupa */
+    .caixa-busca>img {
+        height: 30px;
+    }
+
+    /* Configuração do texto do seletor de estados "Selecione seu Estado" */
+    .header-mobile>label {
+        margin-right: 10px;
+        font-family: dosis-bold;
+    }
+
+    /* Seleção do tipo de fonte da caixa de seleção de estado */
+    .header-mobile>select>option {
+        font-family: dosis-bold;
+    }
+
+    /* Botão hamburguer mobile */
+    .btn-celular {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        z-index: 3;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        order: -1;
+    }
+
+    /* Caixa branca que comporta os links do menu mobile, aparece ao clicar no hamburguer */
+    .menu-interno-mobile {
+        padding: 20px 0 20px 0;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: 50px;
+        float: right;
+        width: 240px;
+        height: auto;
+        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        column-gap: 5px;
+
+    }
+
+    /* Configuração do tamanho e margem dos ícones dentro do menu */
+    .menu-interno-mobile>a>img {
+        width: 20px;
+        margin-right: 50px;
+    }
+
+    /* Configuração dos links */
+    .menu-interno-mobile>a {
+        border: 1px solid #6464644b;
+        width: 100%;
+        height: auto;
+        text-decoration: none;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 8px;
+        margin-bottom: 5px;
+    }
+
+    /* Faixa laranja que comporta o texto "Filtre sua busca" */
+    .filtre-busca-mobile {
+        margin-top: 10px;
+        width: 100%;
+        height: 30px;
+        background-color: #ff9f32;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Tamanho e margem do ícone da lupa */
+    .filtre-busca-mobile>img {
+        height: 20px;
+        margin-right: 5px;
+    }
+
+    /* Configuração do texto */
+    .filtre-busca-mobile>h2 {
+        color: white;
+        font-family: dosis-bold;
+    }
+
+    /* Caixa que comporta cada um dos filtros */
+    .tipo-filtro {
+        width: 111px;
+        margin-top: 15px;
+    }
+
+    /* Tamanho do ícone dos filtros */
+    .tipo-filtro>img {
+        height: 25px;
+    }
+
+    /* Tamanho do texto dos filtros */
+    .tipo-filtro>h2 {
+        font-size: 13px;
+    }
+
+    /* Alinhamento superior para o filtro "porte" */
+    #porte-mobile {
+        align-content: flex-start;
+    }
+
+
+    /* Aqui começa o conteúdo Main do mobile */
+
+    /* Zeramento de margem e configuração da altura em relação o conteúdo */
+    .main-desktop-tablet {
+        height: auto;
+        grid-area: main;
+        margin: 0;
+    }
+
+    /* Ajustes da faixa laranja para o mobile */
+    .texto-conheca-seu-mais-novo-amigo {
+        margin-top: 5px;
+        padding: 0px;
+        height: 30px;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    /* Ajustes do texto para o mobile */
+    .texto-conheca-seu-mais-novo-amigo>h2 {
+        bottom: 0px;
+        top: 4px;
+        font-size: 16px;
+        color: white;
+        letter-spacing: 2px;
+        font-family: dosis-bold;
+    }
+
+    /* Ajustes da caixa externa que comporta todos os animais para o mobile */
+    .caixa-animais-externa {
+        column-gap: 40px;
+        row-gap: 0;
+    }
+
+    /* Ajuste do tamanho da fonte do texto da cidade/estado */
+    .caixa-animal>h3 {
+        font-size: 13px;
+    }
+
+    /* Ajuste do tamanho da fonte do nome do animal */
+    .caixa-animal>h2 {
+        font-size: 20px;
+    }
+
+    /* Ajuste do tamanho da fonte das características do animal */
+    .caixa-animal>ul>li {
+        font-size: 13px;
+    }
+
+    /* Ajuste do tamanho da fonte da descrição do animal */
+    .caixa-animal>p {
+        font-size: 13px;
+    }
+
+}
+
+/* Regras para ocultar elementos mobile do layout desktop */
+
+/* Oculta o header da versão mobile no desktop/tablet */
+@media (min-width: 601px) {
+    .header-mobile {
+        display: none;
+    }
+
+    /* Oculta o botão retornar ao topo */
+    #btn-topo {
+        display: none;
+    }
+}
+
+/* Regras para ocultar elementos desktop do layout mobile */
+
+/* Oculta a seleção de estados da versão desktop/tablet no mobile */
+@media (max-width: 600px) {
+    .selecao-estado-desktop {
+        display: none;
+    }
+
+    /* Oculta todo o aside desktop/tablet do mobile */
+    .aside-desktop-tablet {
+        display: none;
+    }
+}

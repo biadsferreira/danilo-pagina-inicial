@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Um novo conceito para doar e adotar cães e gatos">
+    <meta name="keywords" content="adotar, doar, cachorros, gatos, cães, ong, animal, doméstico">
+    <meta name="copyright" content="© Lar pro Bicho">
+    <meta name="author" content="Danilo Pupin">
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>Lar pro Bicho</title>
+</head>
+
+<body>
+    <div class="container" id="topo">
+
+        <header class="header">
+
+            <!-- Header Desktop / Tablet -->
+            <nav class="menu-desktop">
+                <h1>Um novo conceito para <b>doar e adotar</b> cães e gatos</h1>
+
+                <!--Caixa de pesquisa-->
+                <div class="caixa-busca">
+                    <img src="imgs/icone_lupa.svg" alt="Lupa de busca">
+                    <input type="text" name="busca" id="busca" placeholder="Busque por um termo específico">
+                </div>
+
+                <!--Menu de navegação telas >1200px-->
+                <nav class="menu-superior">
+                    <a href="../sabrina-cadastro-de-animais/cadastro-de-animais.html">
+                        <img src="imgs/icone_adicionar.svg" alt="Icone adição">
+                        <p>Doe um bichinho</p>
+                    </a>
+
+                    <a href="../theodoro-gerenciamento-de-conta/gerenciamento-de-conta.html">
+                        <img src="imgs/icone_mao-coracao.svg" alt="Icone mão com coração">
+                        <p>Minhas doações</p>
+                    </a>
+
+                    <a href="../alicia-cadastro-de-usuario/cadastro-usuario.html">
+                        <img src="imgs/icone_lista-check.svg" alt="Prancheta com simbolo de check">
+                        <p>Cadastre-se</p>
+                    </a>
+
+                    <a href="#">
+                        <img src="imgs/icone_chat.svg" alt="Icone de chat">
+                        <p id="chat-desktop">Chat</p>
+                    </a>
+
+                </nav>
+
+                <!--Botão Hamburger - Menu de navegação telas entre 1200-600px-->
+                <nav class="btn-tablet" onclick="clickMenu()">
+                    <img src="imgs/hamburger.svg" alt="Ícone menu hamburger" id="hamburger">
+
+                    <!-- Div que comporta todos os ícones e links do menu mobile. ID menuMobile é utilizado na função de mostrar ao clicar no JS -->
+                    <div class="menu-tablet-interno" id="menuMobile">
+
+                        <!-- Links com ícones do menu mobile -->
+                        <a href="../sabrina-cadastro-de-animais/cadastro-de-animais.html">
+                            <img src="imgs/icone_adicionar.svg" alt="Icone adição">
+                            <p>Doe um bichinho</p>
+                        </a>
+
+                        <a href="../theodoro-gerenciamento-de-conta/gerenciamento-de-conta.html">
+                            <img src="imgs/icone_mao-coracao.svg" alt="Icone mão com coração">
+                            <p>Minhas doações</p>
+                        </a>
+
+                        <a href="../alicia-cadastro-de-usuario/cadastro-usuario.html">
+                            <img src="imgs/icone_lista-check.svg" alt="Prancheta com simbolo de check">
+                            <p>Cadastre-se</p>
+                        </a>
+
+                        <a href="#">
+                            <img src="imgs/icone_chat.svg" alt="Icone de chat">
+                            <p>Chat</p>
+                        </a>
+
+                    </div>
+
+                </nav>
+
+            </nav>
+
+            <!-- Header Mobile -->
+            <nav class="header-mobile">
+                <!-- Logo e texto H1 -->
+                <img src="imgs/logo.svg" alt="Logo Lar pro Bicho">
+                <h1>Um novo conceito para<br><b>doar e adotar</b> cães e gatos</h1>
+
+                <!-- Icone e input de busca -->
+                <div class="caixa-busca">
+                    <img src="imgs/icone_lupa.svg" alt="Lupa de busca">
+                    <input type="text" name="busca" id="busca" placeholder="Busque por um termo específico">
+                </div>
+
+                <!-- Seletor de estado -->
+                <label for="estado">Selecione seu Estado</label>
+                <select name="estado" id="estado">
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AM">AM</option>
+                    <option value="AP">AP</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MG">MG</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="PR">PR</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="RS">RS</option>
+                    <option value="SC">SC</option>
+                    <option value="SE">SE</option>
+                    <option value="SP">SP</option>
+                    <option value="TO">TO</option>
+                </select>
+
+                <!-- Botão hamburger mobile -->
+                <nav class="btn-celular" onclick="clickMenuMobile()">
+                    <img src="imgs/hamburger.svg" alt="Ícone menu hamburger">
+
+                    <!-- Caixa que comporta os links do menu mobile -->
+                    <div class="menu-interno-mobile" id="menuMenor">
+
+                        <!-- Links com ícones do menu mobile -->
+                        <a href="../sabrina-cadastro-de-animais/cadastro-de-animais.html">
+                            <img src="imgs/icone_adicionar.svg" alt="Icone adição">
+                            <p>Doe um bichinho</p>
+                        </a>
+
+                        <a href="../theodoro-gerenciamento-de-conta/gerenciamento-de-conta.html">
+                            <img src="imgs/icone_mao-coracao.svg" alt="Icone mão com coração">
+                            <p>Minhas doações</p>
+                        </a>
+
+                        <a href="../alicia-cadastro-de-usuario/cadastro-usuario.html">
+                            <img src="imgs/icone_lista-check.svg" alt="Prancheta com simbolo de check">
+                            <p>Cadastre-se</p>
+                        </a>
+
+                        <a href="#">
+                            <img src="imgs/icone_chat.svg" alt="Icone de chat">
+                            <p>Chat</p>
+                        </a>
+
+                        <div class="filtre-busca-mobile">
+                            <img src="imgs/icone_lupa-fundo-branco.svg" alt="Icone de lupa">
+                            <h2>Filtre sua busca</h2>
+                        </div>
+
+                        <!-- Filtros dentro do menu mobile -->
+                        <div class="tipo-filtro">
+                            <h2 class="h2-filtros">Tipo animal</h2>
+                            <img src="imgs/icone_cachorro.svg" alt="Ícone cachorro">
+                            <img src="imgs/icone_gato.svg" alt="Ícone gato">
+                        </div>
+
+                        <div class="tipo-filtro">
+                            <h2 class="h2-filtros">Sexo</h2>
+                            <img src="imgs/icone_m.svg" alt="Ícone do sexo masculino">
+                            <img src="imgs/icone_f.svg" alt="Ícone do sexo feminino">
+                        </div>
+
+                        <div class="tipo-filtro">
+                            <h2 class="h2-filtros">Cor</h2>
+                            <img src="imgs/icone_preto.svg" alt="Ícone da cor preta">
+                            <img src="imgs/icone_branco.svg" alt="Ícone da cor branca">
+                            <img src="imgs/icone_camarelo-claro.svg" alt="Ícone da cor caramelo claro">
+                            <img src="imgs/icone_caramelo-escuro.svg" alt="Ícone da cor caramelo escuro">
+                            <img src="imgs/icone_preto-branco.svg" alt="Ícone da cor preto e branco">
+                            <img src="imgs/icone_branco-caramelo.svg" alt="Ícone da cor branco e caramelo">
+                        </div>
+
+                        <div class="tipo-filtro" id="porte-mobile">
+                            <h2 class="h2-filtros">Porte</h2>
+                            <img src="imgs/icone_p.svg" alt="Ícone do porte pequeno">
+                            <img src="imgs/icone_m.svg" alt="Ícone do porte médio">
+                            <img src="imgs/icone_g.svg" alt="Ícone do porte grande">
+                        </div>
+
+                    </div>
+
+                </nav>
+
+            </nav>
+
+            <!-- Botão de voltar ao topo mobile -->
+            <a href="#topo">
+                <img src="imgs/icone_topo.svg" alt="Icone com seta para cima para retornar ao topo da página"
+                    id="btn-topo">
+            </a>
+        </header>
+
+        <!-- Conteúdo Aside desktop / Tablet -->
+        <aside class="aside-desktop-tablet">
+            <!--Logo superior-->
+            <div class="caixa-logo">
+                <img src="imgs/logo.svg" alt="Logo Lar pro Bicho">
+            </div>
+
+            <!--Containers de cada filtro de busca-->
+            <nav class="filtros-busca">
+
+                <div class="tipo-filtro-lupa">
+                    <img src="imgs/icone_lupa.svg" alt="Icone Lupa">
+                    <h2>Filtre sua busca</h2>
+                </div>
+
+                <div class="tipo-filtro">
+                    <h2 class="h2-filtros">Tipo animal</h2>
+                    <img src="imgs/icone_cachorro.svg" alt="Ícone cachorro">
+                    <img src="imgs/icone_gato.svg" alt="Ícone gato">
+                </div>
+
+                <div class="tipo-filtro">
+                    <h2 class="h2-filtros">Sexo</h2>
+                    <img src="imgs/icone_m.svg" alt="Ícone do sexo masculino">
+                    <img src="imgs/icone_f.svg" alt="Ícone do sexo feminino">
+                </div>
+
+                <div class="tipo-filtro">
+                    <h2 class="h2-filtros">Porte</h2>
+                    <img src="imgs/icone_p.svg" alt="Ícone do porte pequeno">
+                    <img src="imgs/icone_m.svg" alt="Ícone do porte médio">
+                    <img src="imgs/icone_g.svg" alt="Ícone do porte grande">
+                </div>
+
+                <div class="tipo-filtro" id="cor">
+                    <h2 class="h2-filtros">Cor</h2>
+                    <img src="imgs/icone_preto.svg" alt="Ícone da cor preta">
+                    <img src="imgs/icone_branco.svg" alt="Ícone da cor branca">
+                    <img src="imgs/icone_camarelo-claro.svg" alt="Ícone da cor caramelo claro">
+                    <img src="imgs/icone_caramelo-escuro.svg" alt="Ícone da cor caramelo escuro">
+                    <img src="imgs/icone_preto-branco.svg" alt="Ícone da cor preto e branco">
+                    <img src="imgs/icone_branco-caramelo.svg" alt="Ícone da cor branco e caramelo">
+                </div>
+
+            </nav>
+
+        </aside>
+
+        <!-- Conteúdo Main deskto/tablet -->
+        <main class="main-desktop-tablet">
+
+            <!-- Seleção do estado na faixa branca -->
+            <nav class="selecao-estado-desktop">
+                <h3>Selecione seu estado: </h3>
+                <a href="#">AC</a>
+                <a href="#">AL</a>
+                <a href="#">AM</a>
+                <a href="#">AP</a>
+                <a href="#">BA</a>
+                <a href="#">CE</a>
+                <a href="#">DF</a>
+                <a href="#">ES</a>
+                <a href="#">GO</a>
+                <a href="#">MA</a>
+                <a href="#">MG</a>
+                <a href="#">MS</a>
+                <a href="#">MT</a>
+                <a href="#">PA</a>
+                <a href="#">PB</a>
+                <a href="#">PE</a>
+                <a href="#">PI</a>
+                <a href="#">PR</a>
+                <a href="#">RJ</a>
+                <a href="#">RN</a>
+                <a href="#">RO</a>
+                <a href="#">RR</a>
+                <a href="#">RS</a>
+                <a href="#">SC</a>
+                <a href="#">SE</a>
+                <a href="#">SP</a>
+                <a href="#">TO</a>
+            </nav>
+
+            <!-- Texto da faixa laranja -->
+            <div class="texto-conheca-seu-mais-novo-amigo">
+                <h2>Conheça seu mais novo amigo!</h2>
+            </div>
+
+            <!-- Caixa externa que comporta todos os animais -->
+            <section class="caixa-animais-externa">
+
+                <!-- Este Article representa uma caixa externa para cada animal. Nela comporta a imagem e os textos -->
+                <!-- Cada article é um animal diferente -->
+                <article class="caixa-animal">
+                    <a href="../lorena-visuanimal/visuanimal.html"><img src="imgs/pipoca.jpg" alt="cachorro"
+                            id="imagem-animal"></a>
+                    <img src="imgs/icone_sp.svg" alt="Bolinha laranja com texto SP" id="icone-estado">
+                    <h3>Marília / SP</h3>
+                    <h2>Pipoca</h2>
+                    <ul>
+                        <li>Cãozinho</li>
+                        <li>Macho</li>
+                        <li>Pequeno</li>
+                        <li>Pelagem branca</li>
+                    </ul>
+                    <p>Super dócio, carinhoso e amigável. Foi encontrado no Av. dos Estados. Aguardando um dono na ONG
+                        Amor Pelos Pets.</p>
+                </article>
+
+                <article class="caixa-animal">
+                    <img src="imgs/sophia.jpg" alt="gato" id="imagem-animal">
+                    <img src="imgs/icone_mg.svg" alt="Bolinha laranja com texto MG" id="icone-estado">
+                    <h3>Poços de caldas / MG</h3>
+                    <h2>Sophia</h2>
+                    <ul>
+                        <li>Gatinho</li>
+                        <li>Fêmea</li>
+                        <li>Pequeno</li>
+                        <li>Pelagem caramelo</li>
+                    </ul>
+                    <p>Gata dócil já castrada com cerca de 1 ano de idade procura por um dono. Resgatei da rua e não
+                        tenho condições de ficar.</p>
+                </article>
+
+
+                <article class="caixa-animal">
+                    <a href="../lorena-visuanimal/visuanimal.html"><img src="imgs/pipoca.jpg" alt="cachorro"
+                            id="imagem-animal"></a>
+                    <img src="imgs/icone_sp.svg" alt="Bolinha laranja com texto SP" id="icone-estado">
+                    <h3>Marília / SP</h3>
+                    <h2>Pipoca</h2>
+                    <ul>
+                        <li>Cãozinho</li>
+                        <li>Macho</li>
+                        <li>Pequeno</li>
+                        <li>Pelagem branca</li>
+                    </ul>
+                    <p>Super dócio, carinhoso e amigável. Foi encontrado no Av. dos Estados. Aguardando um dono na ONG
+                        Amor Pelos Pets.</p>
+                </article>
+
+
+                <article class="caixa-animal">
+                    <img src="imgs/sophia.jpg" alt="gato" id="imagem-animal">
+                    <img src="imgs/icone_mg.svg" alt="Bolinha laranja com texto MG" id="icone-estado">
+                    <h3>Poços de caldas / MG</h3>
+                    <h2>Sophia</h2>
+                    <ul>
+                        <li>Gatinho</li>
+                        <li>Fêmea</li>
+                        <li>Pequeno</li>
+                        <li>Pelagem caramelo</li>
+                    </ul>
+                    <p>Gata dócil já castrada com cerca de 1 ano de idade procura por um dono. Resgatei da rua e não
+                        tenho condições de ficar.</p>
+                </article>
+
+
+                <article class="caixa-animal">
+                    <a href="../lorena-visuanimal/visuanimal.html"><img src="imgs/pipoca.jpg" alt="cachorro"
+                            id="imagem-animal"></a>
+                    <img src="imgs/icone_sp.svg" alt="Bolinha laranja com texto SP" id="icone-estado">
+                    <h3>Marília / SP</h3>
+                    <h2>Pipoca</h2>
+                    <ul>
+                        <li>Cãozinho</li>
+                        <li>Macho</li>
+                        <li>Pequeno</li>
+                        <li>Pelagem branca</li>
+                    </ul>
+                    <p>Super dócio, carinhoso e amigável. Foi encontrado no Av. dos Estados. Aguardando um dono na ONG
+                        Amor Pelos Pets.</p>
+                </article>
+
+
+                <article class="caixa-animal">
+                    <img src="imgs/sophia.jpg" alt="gato" id="imagem-animal">
+                    <img src="imgs/icone_mg.svg" alt="Bolinha laranja com texto MG" id="icone-estado">
+                    <h3>Poços de caldas / MG</h3>
+                    <h2>Sophia</h2>
+                    <ul>
+                        <li>Gatinho</li>
+                        <li>Fêmea</li>
+                        <li>Pequeno</li>
+                        <li>Pelagem caramelo</li>
+                    </ul>
+                    <p>Gata dócil já castrada com cerca de 1 ano de idade procura por um dono. Resgatei da rua e não
+                        tenho condições de ficar.</p>
+                </article>
+
+                <article class="caixa-animal">
+                    <a href="../lorena-visuanimal/visuanimal.html"><img src="imgs/pipoca.jpg" alt="cachorro"
+                            id="imagem-animal"></a>
+                    <img src="imgs/icone_sp.svg" alt="Bolinha laranja com texto SP" id="icone-estado">
+                    <h3>Marília / SP</h3>
+                    <h2>Pipoca</h2>
+                    <ul>
+                        <li>Cãozinho</li>
+                        <li>Macho</li>
+                        <li>Pequeno</li>
+                        <li>Pelagem branca</li>
+                    </ul>
+                    <p>Super dócio, carinhoso e amigável. Foi encontrado no Av. dos Estados. Aguardando um dono na ONG
+                        Amor Pelos Pets.</p>
+                </article>
+
+
+                <article class="caixa-animal">
+                    <img src="imgs/sophia.jpg" alt="gato" id="imagem-animal">
+                    <img src="imgs/icone_mg.svg" alt="Bolinha laranja com texto MG" id="icone-estado">
+                    <h3>Poços de caldas / MG</h3>
+                    <h2>Sophia</h2>
+                    <ul>
+                        <li>Gatinho</li>
+                        <li>Fêmea</li>
+                        <li>Pequeno</li>
+                        <li>Pelagem caramelo</li>
+                    </ul>
+                    <p>Gata dócil já castrada com cerca de 1 ano de idade procura por um dono. Resgatei da rua e não
+                        tenho condições de ficar.</p>
+                </article>
+
+
+                <article class="caixa-animal">
+                    <a href="../lorena-visuanimal/visuanimal.html"><img src="imgs/pipoca.jpg" alt="cachorro"
+                            id="imagem-animal"></a>
+                    <img src="imgs/icone_sp.svg" alt="Bolinha laranja com texto SP" id="icone-estado">
+                    <h3>Marília / SP</h3>
+                    <h2>Pipoca</h2>
+                    <ul>
+                        <li>Cãozinho</li>
+                        <li>Macho</li>
+                        <li>Pequeno</li>
+                        <li>Pelagem branca</li>
+                    </ul>
+                    <p>Super dócio, carinhoso e amigável. Foi encontrado no Av. dos Estados. Aguardando um dono na ONG
+                        Amor Pelos Pets.</p>
+                </article>
+
+
+                <article class="caixa-animal">
+                    <img src="imgs/sophia.jpg" alt="gato" id="imagem-animal">
+                    <img src="imgs/icone_mg.svg" alt="Bolinha laranja com texto MG" id="icone-estado">
+                    <h3>Poços de caldas / MG</h3>
+                    <h2>Sophia</h2>
+                    <ul>
+                        <li>Gatinho</li>
+                        <li>Fêmea</li>
+                        <li>Pequeno</li>
+                        <li>Pelagem caramelo</li>
+                    </ul>
+                    <p>Gata dócil já castrada com cerca de 1 ano de idade procura por um dono. Resgatei da rua e não
+                        tenho condições de ficar.</p>
+                </article>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Carregamento do JS externo -->
+    <script src="script.js"></script>
+</body>
+
+</html>
